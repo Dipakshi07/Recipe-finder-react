@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main Container */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 120px 5% 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff1eb, #ace0f9);
+}
+
+/* Heading */
+.container h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2b2b2b;
+  position: relative;
+  display: inline-block;
+}
+
+/* Decorative underline */
+.container h1::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* Search Bar Wrapper */
+.searchbar {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Input Field */
+.searchbar input {
+  width: 280px;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.searchbar input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(255, 75, 43, 0.35);
+}
+
+/* Search Button */
+.searchbar button {
+  height: 48px;
+  padding: 0 30px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 10px 25px rgba(255, 75, 43, 0.4);
+  transition: all 0.3s ease;
+}
+
+.searchbar button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 75, 43, 0.6);
+}
+
+/* Error Message */
+.container p {
+  margin-top: 18px;
+  font-size: 16px;
+  color: #e11d48;
+  animation: shake 0.4s ease;
+}
+
+/* Subtle shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Meal Cards Wrapper */
+.container > div:last-child {
+  margin-top: 60px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .searchbar {
+    gap: 12px;
+  }
+
+  .searchbar input {
+    width: 240px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .container {
+    padding-top: 90px;
+  }
+
+  .searchbar {
+    flex-direction: column;
+  }
+
+  .searchbar input,
+  .searchbar button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
