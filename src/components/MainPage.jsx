@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MealCard from "./MealCard";
+import "./Mainpage.css"
 
 const MainPage = () => {
 
@@ -28,14 +29,14 @@ const MainPage = () => {
 
   return (
     <>
-      <div className='container mt-28 text-center w-screen' >
-          <h1 className='font-bold text-3xl'>Recipe Finder</h1>
-          <div className='searchbar mt-12 w-full'>
-                <input className='w-72 h-10 rounded-xl border-2 border-black px-4' type='text' placeholder='Enter your recipe here' 
+      <div className='container' >
+          <h1>Recipe Finder</h1>
+          <div className='searchbar'>
+                <input type='text' placeholder='Enter your recipe here' 
                   onChange={handleInput}/>
-                 <button className='w-32 h-11 rounded-xl bg-rose-400 text-lg mx-2 font-semibold' onClick={myFun}>Search</button>
+                 <button onClick={myFun}>Search</button>
           </div>
-          <p className="text-red-500 font-semibold mt-4">{msg}</p>
+          <p >{msg}</p>
            <div>
                   <MealCard detail={data}/>
            </div>
